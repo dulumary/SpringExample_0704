@@ -28,5 +28,21 @@
 		
 		)
 	</insert>
+	
+	
+	<select id="selectLastUser" resultType="com.marondal.ex.jsp.model.User">
+		SELECT
+			`id` 
+			, `name`
+			, `yyyymmdd`
+			, `introduce`
+			, `email`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`new_user`
+		ORDER BY `id` DESC
+		LIMIT 1
+	</select>
 
 </mapper>
