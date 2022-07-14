@@ -8,8 +8,8 @@
 </head>
 <body>
 	
-	<form method="post" action="/jsp/user/insert">
-
+	<!--   <form method="post" action="/jsp/user/insert"> -->
+	<form method="post" action="/jsp/user/insert_view">
 		<label>이름 </label> <input type="text" name="name">
 		<label>생년월일 </label> <input type="text" name="yyyymmdd">
 		<label>이메일 </label> <input type="text" name="email"> <br>

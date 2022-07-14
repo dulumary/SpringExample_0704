@@ -14,6 +14,8 @@ public interface UserDAO {
 			,@Param("introduce") String introduce
 			,@Param("email") String email);
 	
+	public int insertUserWithId(User user);
+	
 	// 가장 최근 등록된 사용자 정보 조회
 	public User selectLastUser();
 

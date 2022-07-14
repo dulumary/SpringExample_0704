@@ -29,6 +29,30 @@
 		)
 	</insert>
 	
+	<insert id="insertUserWithId" parameterType="com.marondal.ex.jsp.model.User"
+	useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO 
+			`new_user`
+		(
+			`name`
+			, `yyyymmdd`
+			, `introduce`
+			, `email`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUES 
+		(
+			#{name}
+			, #{yyyymmdd}
+			, #{introduce}
+			, #{email}
+			, now()
+			, now()
+		)
+		
+	</insert>
+	
 	
 	<select id="selectLastUser" resultType="com.marondal.ex.jsp.model.User">
 		SELECT
