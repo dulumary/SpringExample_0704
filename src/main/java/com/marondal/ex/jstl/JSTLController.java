@@ -1,24 +1,27 @@
 package com.marondal.ex.jstl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.marondal.ex.jsp.model.User;
 
 @Controller
+@RequestMapping("/jstl")
 public class JSTLController {
 	
-	@GetMapping("/jstl/ex01")
+	@GetMapping("/ex01")
 	public String ex01() {
 		
 		return "jstl/ex01";
 	}
 	
-	@GetMapping("/jstl/ex02")
+	@GetMapping("/ex02")
 	public String ex02(Model model) {
 		
 		// 과일이름 리스트 
@@ -49,6 +52,20 @@ public class JSTLController {
 		return "jstl/ex02";
 	}
 	
+	@GetMapping("/ex03")
+	public String ex03(Model model) {
+		
+		Date now = new Date();
+		model.addAttribute("now", now);
+		
+		return "jstl/ex03";
+	}
+	
+	@GetMapping("/ex04")
+	public String ex04() {
+		
+		return "jstl/ex04";
+	}
 	
 
 }
