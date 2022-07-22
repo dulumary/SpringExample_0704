@@ -55,7 +55,17 @@
 					// 리스펀스를 위한 옵션
 					success:function(data) {
 						//alert(data);
-						location.href = "/ajax/user/list";
+						// {"result":"success"}
+						// {"result":"fail"}
+						
+						// 만약에 성공했으면 리스트로 이동
+						if(data.result == "success") {
+							location.href = "/ajax/user/list";
+						} else {
+						// 실패 했으면 얼럿띄우기 
+							alert("삽입실패!!");	
+						}
+						
 					},
 					error:function() {
 						

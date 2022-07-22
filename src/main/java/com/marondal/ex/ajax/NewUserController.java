@@ -1,6 +1,8 @@
 package com.marondal.ex.ajax;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,15 +37,30 @@ public class NewUserController {
 	// 이름, 생년월일, 자기소개, 이메일 전달 받고 저장
 	@PostMapping("/insert")
 	@ResponseBody
-	public String addUser(
+	public Map<String, String> addUser(
 			@RequestParam("name") String name
 			, @RequestParam("birthday") String birthday
 			, @RequestParam("introduce") String introduce
 			, @RequestParam("email") String email) {
 		
 		int count = newUserBO.addUser(name, birthday, introduce, email);
+		// {"result":"success"}
 		
-		return "삽입결과 : " + count;
+		Map<String, String> result = new HashMap<>();
+		
+		if(count == 1) {
+			// 정상 상태
+			// {"result":"success"}
+			result.put("result", "success");
+			 
+		} else {
+			// 문제 상태 
+			// {"result":"fail"}
+			result.put("result", "fail");
+		}
+		
+		return result;
+		
 	}
 	
 	@GetMapping("/input")
