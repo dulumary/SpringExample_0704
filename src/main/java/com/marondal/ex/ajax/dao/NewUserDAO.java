@@ -18,5 +18,9 @@ public interface NewUserDAO {
 			,@Param("birthday") String birthday
 			,@Param("introduce") String introduce
 			,@Param("email") String email);
+	
+	// name 
+	// SELECT count(1) FROM `new_user` WHERE `name` =  '김인규';
+	public int selectCountByName(@Param("name") String name);
 
 }
