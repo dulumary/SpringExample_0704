@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.marondal.spring.ex.database.repository.UsedGoodsRepository">
+
+	<select id="selectUsedGoodsList" resultType="com.marondal.spring.ex.database.domain.UsedGoods">
+		SELECT 
+			`id`
+			, `sellerId`
+			, `title`
+			, `price`
+			, `description`
+			, `image`
+			, `createdAt`
+			, `updatedAt`
+		FROM 
+			`used_goods`
+	</select>
+	
+	
+
+
+</mapper>
