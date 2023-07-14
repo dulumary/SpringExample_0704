@@ -42,6 +42,30 @@
 	</c:forEach>
 	
 	
+	<h3>유저 리스트</h3>
+	
+	<table border="1">
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>나이</th>
+				<th>취미</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<c:forEach var="user" items="${userList }" >
+			<tr>	
+				<td>${user.name }</td>
+				<td>${user.age }</td>
+				<td>${user.hobby }</td>
+			</tr>
+			</c:forEach>
+			
+		</tbody>
+	
+	</table>
+	
 	
 	
 	
