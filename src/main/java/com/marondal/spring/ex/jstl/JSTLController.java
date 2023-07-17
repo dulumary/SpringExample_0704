@@ -1,6 +1,7 @@
 package com.marondal.spring.ex.jstl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,5 +54,25 @@ public class JSTLController {
 		
 		return "jstl/ex02";
 	}
+	
+	
+	@GetMapping("/ex03")
+	public String ex03(Model model) {
+		
+		Date date = new Date();
+		
+		model.addAttribute("now", date);
+		
+		String dateString = "2023/07/14 20:53:12";
+		model.addAttribute("dateString", dateString);
+		
+		return "jstl/ex03";
+	}
+	
+	@GetMapping("/ex04")
+	public String ex04() {
+		return "jstl/ex04";
+	}
+	
 
 }
