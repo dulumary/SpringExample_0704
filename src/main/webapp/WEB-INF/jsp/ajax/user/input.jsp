@@ -51,7 +51,7 @@
 				
 				$.ajax({
 					type:"get"
-					, url:"/ajax/user/aadd"
+					, url:"/ajax/user/add"
 					, data:{"name":name, "birthday":birthday, "email":email, "introduce":introduce}
 					, success:function(data) {
 						// 성공 : {"result":"success"}
@@ -63,7 +63,6 @@
 							alert("추가 실패");
 						}
 					
-						
 					}
 					, error:function() {
 						alert("추가 에러!!");
